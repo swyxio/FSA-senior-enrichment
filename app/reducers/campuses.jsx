@@ -2,6 +2,7 @@ import axios from 'axios';
 
 // ACTION TYPES
 const ADD_NEW_CAMPUS = 'ADD_NEW_CAMPUS';
+const EDIT_CAMPUS = 'EDIT_CAMPUS';
 const REMOVE_CAMPUS = 'REMOVE_CAMPUS';
 const GET_CAMPUSES = 'GET_CAMPUSES';
 
@@ -13,6 +14,10 @@ export function removeCampus (campusId) {
 
 export function addCampus (campus) {
   const action = { type: ADD_NEW_CAMPUS, campus };
+  return action;
+}
+export function editCampus (campus) {
+  const action = { type: EDIT_CAMPUS, campus };
   return action;
 }
 
@@ -46,6 +51,18 @@ export function postNewCampus (campus, history) {
       });
   };
 }
+export function putCampus (campus, campusId, history) {
+
+  return function thunk (dispatch) {
+    return axios.put('/api/campuses/' + campusId, campus)
+      .then(res => res.data)
+      .then(newCampus => {
+        dispatch(editCampus(newCampus.campus));
+        // history.push(`/campuses/${newCampus.campus.id}`);
+        history.push(`/campuses/`);
+      });
+  };
+}
 
 
 export function deleteCampus (campusId) {
@@ -73,6 +90,10 @@ export default function reducer (state = [], action) {
 
     case REMOVE_CAMPUS:
       return [...state].filter(campus => campus.id != action.campusId);
+
+    case EDIT_CAMPUS:
+      const filtered = [...state].filter(campus => campus.id != action.campus.id);
+      return [...filtered, action.campus]
 
     default:
       return state;

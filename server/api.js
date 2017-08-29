@@ -63,14 +63,15 @@ api.get('/students/:id', async (req, res) => {
 	r ? res.json(r) : res.status(404).send()
 })
 api.post('/students', async (req, res) => {
+	console.log(req.body)
 	if (!req.body.bio) return res.status(500).send()
 	if (!req.body.campusId) return res.status(500).send() // check for attached campus
 	
 	try {
-		var attachedCampus = await Campus.findById(req.body.campusId);
-		if (!attachedCampus) return res.status(500).send()
-		const student = await Student.create({bio: req.body.bio, name: req.body.name})
-		var created = await student.setCampus(attachedCampus)
+		// var attachedCampus = await Campus.findById(req.body.campusId);
+		// if (!attachedCampus) return res.status(500).send()
+		const student = await Student.create(req.body)
+		// var created = await student.setCampus(attachedCampus)
 		res.json({message: 'Created successfully', student})
 	} catch (err) {
 		res.status(404).send(err)

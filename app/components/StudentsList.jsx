@@ -15,9 +15,11 @@ const makeRow = (student, deleteStudent) => {
 						<i className="fa fa-user"></i>
 					</button>
 				</NavLink>
-                <button type="button" rel="tooltip" title="Edit Profile" className="btn btn-success btn-simple btn-xs">
-                    <i className="fa fa-edit"></i>
-                </button>
+				<NavLink to={'/students/' + student.id + '/edit'}>
+					<button type="button" rel="tooltip" title="Edit Profile" className="btn btn-success btn-simple btn-xs">
+						<i className="fa fa-edit"></i>
+					</button>
+				</NavLink>
 				<button type="button" rel="tooltip" title="Remove" className="btn btn-danger btn-simple btn-xs" onClick={()=>deleteStudent(student.id)}>
                     <i className="fa fa-times"></i>
                 </button>
@@ -51,6 +53,13 @@ export default class extends React.Component {
 								<br />
 								<br />
 								<h1 className="title text-center" style={{color: "white"}}>{pagetitle}</h1>
+								{!this.props.campusId ? <div /> : <h5 className="text-center">
+									<NavLink to={'/campuses/' + this.props.campusId + '/edit'}>
+										<button className="btn btn-info">
+											edit
+										</button>
+									</NavLink>
+								</h5>}
 							</div>
 						</div>
 				</div>

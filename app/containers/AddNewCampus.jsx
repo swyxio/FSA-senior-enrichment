@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { postNewCampus } from '../reducers';
-import AddNewCampus from '../components/AddNewCampus';
+import CampusForm from '../components/CampusForm';
 
 
 const mapStateToProps = function (state) {
@@ -26,4 +26,4 @@ const mapDispatchToProps = function (dispatch, ownProps) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AddNewCampus);
+)(CampusForm);

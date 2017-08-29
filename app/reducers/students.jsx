@@ -47,11 +47,23 @@ export function fetchStudents () {
 export function postNewStudent (student, history) {
 
   return function thunk (dispatch) {
+      console.log('newStudent', student)
     return axios.post('/api/students', student)
       .then(res => res.data)
       .then(newStudent => {
         // dispatch(addStudent(newStudent));
-        console.log('newStudent', newStudent)
+        history.push(`/campuses/${newStudent.student.campusId}`);
+      });
+  };
+}
+export function putStudent (student, history) {
+
+  return function thunk (dispatch) {
+      console.log('newStudent', student)
+    return axios.put('/api/students/' + student.id, student)
+      .then(res => res.data)
+      .then(newStudent => {
+        // dispatch(addStudent(newStudent));
         history.push(`/campuses/${newStudent.student.campusId}`);
       });
   };

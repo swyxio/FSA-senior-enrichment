@@ -33,7 +33,7 @@ export default class extends React.Component {
                                     <div className="name">
                                         <h3 className="swyx-undo-title">{props.name}</h3>
                                         {props.campus && <NavLink to={'/campuses/' + props.campus.id}>
-                                            <h6>{props.campus.name}</h6>
+                                            <button className="btn btn-primary">{props.campus.name}</button>
                                         </NavLink>}
                                     </div>
                                 </div>

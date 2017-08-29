@@ -9,7 +9,8 @@ const mapStateToProps = function (state, ownProps) {
     studentsList: state.students.students,
     backgroundImage: `url('${state.students.campus.imageUrl}')`,
     // pagetitle: ownProps.match.params.campusId
-    pagetitle: state.students.campus.name
+    pagetitle: state.students.campus.name,
+    campusId: state.students.campus.id
   };
 };
 
