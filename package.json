@@ -9,7 +9,7 @@
     "test": "nodemon --exec 'mocha --reporter spec --timeout 1000 tests/*.test.js || true'",
     "build": "webpack",
     "build-watch": "webpack -w",
-    "start": "nodemon server/start.js",
+    "start": "node server/start.js",
     "seed": "node db/seed"
   },
   "keywords": [
