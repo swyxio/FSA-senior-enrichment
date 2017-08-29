@@ -1,0 +1,58 @@
+import React from 'react';
+import { withRouter, NavLink } from 'react-router-dom';
+
+export default class extends React.Component {
+    componentDidMount() {
+        this.props.fetchStudent()
+    }
+    render() {
+        const props = this.props.selectedStudent
+                    // <div className="container">
+                    //     <div className="section text-center section-landing">
+                    //         <div className="row">
+                    //             <div className="col-md-8 col-md-offset-2">
+                    //                 <h2 className="swyx-undo-title">Students</h2>
+                    //                 <h5 className="description">some text</h5>
+                    //             </div>
+                    //         </div>
+                    //     </div>
+                    // </div>
+            return (
+            <div className="wrapper profile-page" style={{backgroundImage: "url('/assets/img/examples/city.jpg')", backgroundSize: "100%"}}>
+                <div className="header header-filter">
+                </div>
+
+                <div className="main main-raised main-translucent">
+                    <div className="profile-content">
+                        <div className="container">
+                            <div className="row">
+                                <div className="profile">
+                                    <div className="avatar">
+                                        <img src={props.photo} alt="Circle Image" className="img-circle img-responsive img-raised" />
+                                    </div>
+                                    <div className="name">
+                                        <h3 className="swyx-undo-title">{props.name}</h3>
+                                        {props.campus && <NavLink to={'/campuses/' + props.campus.id}>
+                                            <h6>{props.campus.name}</h6>
+                                        </NavLink>}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="swyx-undo-description text-center">
+                                <p>{props.bio}</p>
+                            </div>
+
+                            <div className="row">
+                                <div className="col-md-6 col-md-offset-3">
+                                    <p>Phone: {props.phone}</p>
+                                    <p>Email: {props.email}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            )
+        }
+}

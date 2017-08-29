@@ -15,8 +15,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 //The code below works because `.use` returns `this` which is `app`. So what we want to return in the `module.exports` is `app`, and we can chain on that declaration because each method invokation returns `app` after mutating based on the middleware functions
 module.exports = app
-  .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
+  .use(bodyParser.urlencoded({ extended: true }))
   .use(express.static(resolve(__dirname, '..', 'public'))) // Serve static files from ../public
   .use('/api', require('./api')) // Serve our api
   .get('/*', (_, res) => res.sendFile(resolve(__dirname, '..', 'public', 'index.html'))) // Send index.html for any other requests.

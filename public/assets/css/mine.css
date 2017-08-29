@@ -1,0 +1,37 @@
+li .active {
+    border-style: solid;
+    border-color: cadetblue
+}
+
+.col-md-4 {
+    margin-bottom: 20px
+}
+
+.swyxcardcontainer {
+    padding: 10px
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.card, .card-img {
+    border-radius: 20px
+}
+
+.main-translucent {
+    background-color: rgba(0,0,0,0.6)
+}
+
+.main-translucent-light {
+    background-color: rgba(255,255,255,0.2)
+}
+.form-group label.control-label, .form-group label {
+    color: white
+}
