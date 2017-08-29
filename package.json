@@ -2,6 +2,7 @@
   "name": "fsa-senior-enrichment",
   "version": "0.0.1",
   "description": "A review time project",
+  "engines": {"node": "8.4.0"},
   "main": "index.js",
   "scripts": {
     "test-once": "mocha **/*.test.js *.test.js",
