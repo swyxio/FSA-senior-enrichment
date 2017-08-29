@@ -1,6 +1,6 @@
 # Senior Enrichment Project
 
-Make a thing!
+I made a thing! deployed at <https://swyx-seniorenrichment.herokuapp.com/>
 
 ## Getting started
 

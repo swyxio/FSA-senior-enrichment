@@ -78,7 +78,7 @@
 	
 	var _AddNewCampus2 = _interopRequireDefault(_AddNewCampus);
 	
-	var _AddNewStudent = __webpack_require__(309);
+	var _AddNewStudent = __webpack_require__(293);
 	
 	var _AddNewStudent2 = _interopRequireDefault(_AddNewStudent);
 	
@@ -86,21 +86,21 @@
 	
 	var _SingleCampus2 = _interopRequireDefault(_SingleCampus);
 	
-	var _EditCampus = __webpack_require__(307);
+	var _EditCampus = __webpack_require__(296);
 	
 	var _EditCampus2 = _interopRequireDefault(_EditCampus);
 	
-	var _SingleStudent = __webpack_require__(296);
+	var _SingleStudent = __webpack_require__(297);
 	
 	var _SingleStudent2 = _interopRequireDefault(_SingleStudent);
 	
-	var _EditStudent = __webpack_require__(310);
+	var _EditStudent = __webpack_require__(299);
 	
 	var _EditStudent2 = _interopRequireDefault(_EditStudent);
 	
 	var _reactRouterDom = __webpack_require__(218);
 	
-	var _store = __webpack_require__(298);
+	var _store = __webpack_require__(300);
 	
 	var _store2 = _interopRequireDefault(_store);
 	
@@ -30325,7 +30325,7 @@
 	
 	var _reducers = __webpack_require__(258);
 	
-	var _CampusForm = __webpack_require__(306);
+	var _CampusForm = __webpack_require__(292);
 	
 	var _CampusForm2 = _interopRequireDefault(_CampusForm);
 	
@@ -30353,9 +30353,429 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_CampusForm2.default);
 
 /***/ }),
-/* 292 */,
-/* 293 */,
-/* 294 */,
+/* 292 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _class = function (_Component) {
+		_inherits(_class, _Component);
+	
+		function _class(props) {
+			_classCallCheck(this, _class);
+	
+			var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));
+	
+			_this.state = {
+				name: _this.props.campusName || '',
+				imageUrl: _this.props.campusImage || ''
+			};
+			_this.handleName = _this.handleName.bind(_this);
+			_this.handleUrl = _this.handleUrl.bind(_this);
+			return _this;
+		}
+	
+		_createClass(_class, [{
+			key: 'handleName',
+			value: function handleName(e) {
+				this.setState({ name: e.target.value });
+			}
+		}, {
+			key: 'handleUrl',
+			value: function handleUrl(e) {
+				this.setState({ imageUrl: e.target.value });
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _this2 = this;
+	
+				var bgstyle = {
+					// height: "100vh",
+					backgroundImage: this.props.backgroundImage || "url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450')",
+					backgroundSize: "100%"
+				};
+				var formTitle = this.props.campusName ? "Edit Campus" : "Add New Campus";
+				var buttontitle = this.props.campusName ? "Edit Campus" : "Add New Campus";
+				var campusName = this.props.campusName || undefined;
+				var campusImage = this.props.campusImage || undefined;
+				var floatlabel = this.props.campusName ? "form-group label-floating" : "form-group label-floating is-empty";
+				return _react2.default.createElement(
+					'div',
+					{ className: 'wrapper tutorial-page', style: bgstyle },
+					_react2.default.createElement(
+						'div',
+						{ className: 'header header-nofilter' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'container' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'row' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'col-md-12' },
+									_react2.default.createElement('br', null),
+									_react2.default.createElement('br', null),
+									_react2.default.createElement('br', null),
+									_react2.default.createElement('br', null),
+									_react2.default.createElement(
+										'h1',
+										{ className: 'title text-center', style: { color: "white" } },
+										formTitle
+									)
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'main main-raised main-translucent' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'section' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'container' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'row tim-row' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-8 col-md-offset-2' },
+										_react2.default.createElement(
+											'form',
+											{ onSubmit: function onSubmit(e) {
+													return _this2.props.handleSubmit(e, _this2.state.name, _this2.state.imageUrl, _this2.props.campusId);
+												} },
+											_react2.default.createElement(
+												'div',
+												{ className: floatlabel },
+												_react2.default.createElement(
+													'label',
+													{ className: 'control-label' },
+													'Campus Name'
+												),
+												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'name', onChange: this.handleName, defaultValue: campusName })
+											),
+											_react2.default.createElement(
+												'div',
+												{ className: floatlabel },
+												_react2.default.createElement(
+													'label',
+													{ className: 'control-label' },
+													'Campus Image URL'
+												),
+												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'imageUrl', onChange: this.handleUrl, defaultValue: campusImage })
+											),
+											_react2.default.createElement(
+												'button',
+												{ type: 'submit', className: 'btn btn-primary pull-right' },
+												buttontitle
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return _class;
+	}(_react.Component);
+
+	exports.default = _class;
+
+/***/ }),
+/* 293 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(185);
+	
+	var _reducers = __webpack_require__(258);
+	
+	var _StudentForm = __webpack_require__(294);
+	
+	var _StudentForm2 = _interopRequireDefault(_StudentForm);
+	
+	var _reactRouterDom = __webpack_require__(218);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    campuses: state.campuses
+	  };
+	};
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+	  return {
+	    // handleChange (evt) {
+	    //   dispatch(writeChannelName(evt.target.value));
+	    // },
+	    handleSubmit: function handleSubmit(evt, student) {
+	      evt.preventDefault();
+	      dispatch((0, _reducers.postNewStudent)(student, ownProps.history));
+	      // dispatch(writeChannelName(''));
+	    },
+	    fetchData: function fetchData() {
+	      dispatch((0, _reducers.fetchCampuses)());
+	    }
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_StudentForm2.default);
+
+/***/ }),
+/* 294 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _class = function (_Component) {
+		_inherits(_class, _Component);
+	
+		function _class(props) {
+			_classCallCheck(this, _class);
+	
+			var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));
+	
+			_this.pagetitle = _this.props.selectedStudent ? 'Edit Student' : 'Add New Student';
+			_this.submitbuttonText = _this.props.selectedStudent ? 'Edit Student' : 'Add New Student';
+			var student = _this.props.selectedStudent || { name: '', bio: '' };
+			student.campusId = student.campusId || _this.props.campuses.length > 0 && _this.props.campuses[0].id || undefined;
+			_this.state = student;
+			_this.handleField = _this.handleField.bind(_this);
+			return _this;
+		}
+	
+		_createClass(_class, [{
+			key: 'handleField',
+			value: function handleField(e, field) {
+				var newstate = Object.assign({}, this.state);
+				newstate[field] = e.target.value;
+				this.setState(newstate);
+			}
+		}, {
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				this.props.fetchData();
+			}
+		}, {
+			key: 'componentWillReceiveProps',
+			value: function componentWillReceiveProps(_ref) {
+				var selectedStudent = _ref.selectedStudent;
+	
+				this.setState(selectedStudent);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _this2 = this;
+	
+				var bgstyle = {
+					backgroundImage: this.props.backgroundImage || "url('https://s-media-cache-ak0.pinimg.com/originals/90/f7/44/90f744e74143a15fa17cc2abbe1258e4.jpg')",
+					backgroundSize: "100%"
+				};
+				return _react2.default.createElement(
+					'div',
+					{ className: 'wrapper tutorial-page', style: bgstyle },
+					_react2.default.createElement(
+						'div',
+						{ className: 'header header-nofilter' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'container' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'row' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'col-md-12' },
+									_react2.default.createElement('br', null),
+									_react2.default.createElement('br', null),
+									_react2.default.createElement('br', null),
+									_react2.default.createElement('br', null),
+									_react2.default.createElement(
+										'h1',
+										{ className: 'title text-center', style: { color: "white" } },
+										this.pagetitle
+									)
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'main main-raised main-translucent' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'section' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'container' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'row tim-row' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'col-md-8 col-md-offset-2' },
+										_react2.default.createElement(
+											'form',
+											{ onSubmit: function onSubmit(e) {
+													return _this2.props.handleSubmit(e, _this2.state);
+												} },
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group label-floating' },
+												_react2.default.createElement(
+													'label',
+													{ className: 'control-label' },
+													'Student Name'
+												),
+												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'name', onChange: function onChange(e) {
+														return _this2.handleField(e, 'name');
+													}, value: this.state.name })
+											),
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group label-floating' },
+												_react2.default.createElement(
+													'label',
+													{ className: 'control-label' },
+													'Student Bio'
+												),
+												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'bio', onChange: function onChange(e) {
+														return _this2.handleField(e, 'bio');
+													}, value: this.state.bio })
+											),
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group label-floating' },
+												_react2.default.createElement(
+													'label',
+													{ className: 'control-label' },
+													'Student Phone'
+												),
+												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'phone', onChange: function onChange(e) {
+														return _this2.handleField(e, 'phone');
+													}, value: this.state.phone })
+											),
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group label-floating' },
+												_react2.default.createElement(
+													'label',
+													{ className: 'control-label' },
+													'Student Photo'
+												),
+												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'photo', onChange: function onChange(e) {
+														return _this2.handleField(e, 'photo');
+													}, value: this.state.photo })
+											),
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group label-floating' },
+												_react2.default.createElement(
+													'label',
+													{ className: 'control-label' },
+													'Student Email'
+												),
+												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'email', onChange: function onChange(e) {
+														return _this2.handleField(e, 'email');
+													}, value: this.state.email })
+											),
+											_react2.default.createElement(
+												'div',
+												{ className: 'form-group' },
+												_react2.default.createElement(
+													'label',
+													{ htmlFor: 'sel1' },
+													'Assigned Campus:'
+												),
+												_react2.default.createElement(
+													'select',
+													{ className: 'form-control', id: 'sel1', onChange: function onChange(e) {
+															return _this2.handleField(e, 'campusId');
+														}, style: { color: 'white' }, value: this.state.campusId },
+													this.props.campuses.map(function (campus) {
+														return _react2.default.createElement(
+															'option',
+															{ key: campus.id, value: campus.id },
+															campus.name
+														);
+													})
+												)
+											),
+											_react2.default.createElement(
+												'button',
+												{ type: 'submit', className: 'btn btn-primary pull-right' },
+												this.submitbuttonText
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return _class;
+	}(_react.Component);
+
+	exports.default = _class;
+
+/***/ }),
 /* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30429,7 +30849,60 @@
 	
 	var _reducers = __webpack_require__(258);
 	
-	var _SingleStudent = __webpack_require__(297);
+	var _CampusForm = __webpack_require__(292);
+	
+	var _CampusForm2 = _interopRequireDefault(_CampusForm);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    // studentsList: state.students.students,
+	    // backgroundImage: `url('${state.students.campus.imageUrl}')`,
+	    // pagetitle: ownProps.match.params.campusId
+	    campusName: state.students.campus.name,
+	    campusImage: state.students.campus.imageUrl,
+	    campusId: state.students.campus.id
+	  };
+	};
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+	  return {
+	    // handleChange (evt) {
+	    //   dispatch(writeChannelName(evt.target.value));
+	    // },
+	    fetchCampusInfo: function fetchCampusInfo() {
+	      dispatch(fetchStudentsOfCampus(ownProps.match.params.campusId));
+	    },
+	    handleSubmit: function handleSubmit(evt, name, imageUrl, campusId) {
+	      evt.preventDefault();
+	      dispatch((0, _reducers.putCampus)({ name: name, imageUrl: imageUrl }, campusId, ownProps.history));
+	      // dispatch(writeChannelName(''));
+	    }
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_CampusForm2.default);
+
+/***/ }),
+/* 297 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(185);
+	
+	var _reducers = __webpack_require__(258);
+	
+	var _SingleStudent = __webpack_require__(298);
 	
 	var _SingleStudent2 = _interopRequireDefault(_SingleStudent);
 	
@@ -30453,7 +30926,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_SingleStudent2.default);
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30592,7 +31065,54 @@
 	exports.default = _class;
 
 /***/ }),
-/* 298 */
+/* 299 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(185);
+	
+	var _reducers = __webpack_require__(258);
+	
+	var _StudentForm = __webpack_require__(294);
+	
+	var _StudentForm2 = _interopRequireDefault(_StudentForm);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    selectedStudent: state.selectedStudent,
+	    campuses: state.campuses
+	  };
+	};
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+	  return {
+	    fetchData: function fetchData() {
+	      dispatch((0, _reducers.fetchStudent)(ownProps.match.params.studentId));
+	      dispatch((0, _reducers.fetchCampuses)());
+	    },
+	    handleSubmit: function handleSubmit(evt, student) {
+	      evt.preventDefault();
+	      dispatch((0, _reducers.putStudent)(student, ownProps.history));
+	      // dispatch(writeChannelName(''));
+	    }
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_StudentForm2.default);
+
+/***/ }),
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30607,11 +31127,11 @@
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
-	var _reduxLogger = __webpack_require__(299);
+	var _reduxLogger = __webpack_require__(301);
 	
 	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 	
-	var _reduxThunk = __webpack_require__(305);
+	var _reduxThunk = __webpack_require__(307);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
@@ -30622,7 +31142,7 @@
 	exports.default = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default, (0, _reduxLogger2.default)())); // https://github.com/evgenyrodionov/redux-logger
 
 /***/ }),
-/* 299 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30634,11 +31154,11 @@
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _core = __webpack_require__(300);
+	var _core = __webpack_require__(302);
 	
-	var _helpers = __webpack_require__(301);
+	var _helpers = __webpack_require__(303);
 	
-	var _defaults = __webpack_require__(304);
+	var _defaults = __webpack_require__(306);
 	
 	var _defaults2 = _interopRequireDefault(_defaults);
 	
@@ -30760,7 +31280,7 @@
 
 
 /***/ }),
-/* 300 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30773,9 +31293,9 @@
 	
 	exports.printBuffer = printBuffer;
 	
-	var _helpers = __webpack_require__(301);
+	var _helpers = __webpack_require__(303);
 	
-	var _diff = __webpack_require__(302);
+	var _diff = __webpack_require__(304);
 	
 	var _diff2 = _interopRequireDefault(_diff);
 	
@@ -30906,7 +31426,7 @@
 	}
 
 /***/ }),
-/* 301 */
+/* 303 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -30930,7 +31450,7 @@
 	var timer = exports.timer = typeof performance !== "undefined" && performance !== null && typeof performance.now === "function" ? performance : Date;
 
 /***/ }),
-/* 302 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30940,7 +31460,7 @@
 	});
 	exports.default = diffLogger;
 	
-	var _deepDiff = __webpack_require__(303);
+	var _deepDiff = __webpack_require__(305);
 	
 	var _deepDiff2 = _interopRequireDefault(_deepDiff);
 	
@@ -31029,7 +31549,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 303 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -31458,7 +31978,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 304 */
+/* 306 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -31509,7 +32029,7 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 305 */
+/* 307 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -31535,529 +32055,6 @@
 	thunk.withExtraArgument = createThunkMiddleware;
 	
 	exports['default'] = thunk;
-
-/***/ }),
-/* 306 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var _class = function (_Component) {
-		_inherits(_class, _Component);
-	
-		function _class(props) {
-			_classCallCheck(this, _class);
-	
-			var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));
-	
-			_this.state = {
-				name: _this.props.campusName || '',
-				imageUrl: _this.props.campusImage || ''
-			};
-			_this.handleName = _this.handleName.bind(_this);
-			_this.handleUrl = _this.handleUrl.bind(_this);
-			return _this;
-		}
-	
-		_createClass(_class, [{
-			key: 'handleName',
-			value: function handleName(e) {
-				this.setState({ name: e.target.value });
-			}
-		}, {
-			key: 'handleUrl',
-			value: function handleUrl(e) {
-				this.setState({ imageUrl: e.target.value });
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var _this2 = this;
-	
-				var bgstyle = {
-					// height: "100vh",
-					backgroundImage: this.props.backgroundImage || "url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450')",
-					backgroundSize: "100%"
-				};
-				var formTitle = this.props.campusName ? "Edit Campus" : "Add New Campus";
-				var buttontitle = this.props.campusName ? "Edit Campus" : "Add New Campus";
-				var campusName = this.props.campusName || undefined;
-				var campusImage = this.props.campusImage || undefined;
-				var floatlabel = this.props.campusName ? "form-group label-floating" : "form-group label-floating is-empty";
-				return _react2.default.createElement(
-					'div',
-					{ className: 'wrapper tutorial-page', style: bgstyle },
-					_react2.default.createElement(
-						'div',
-						{ className: 'header header-nofilter' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'container' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'row' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'col-md-12' },
-									_react2.default.createElement('br', null),
-									_react2.default.createElement('br', null),
-									_react2.default.createElement('br', null),
-									_react2.default.createElement('br', null),
-									_react2.default.createElement(
-										'h1',
-										{ className: 'title text-center', style: { color: "white" } },
-										formTitle
-									)
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'main main-raised main-translucent' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'section' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'container' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'row tim-row' },
-									_react2.default.createElement(
-										'div',
-										{ className: 'col-md-8 col-md-offset-2' },
-										_react2.default.createElement(
-											'form',
-											{ onSubmit: function onSubmit(e) {
-													return _this2.props.handleSubmit(e, _this2.state.name, _this2.state.imageUrl, _this2.props.campusId);
-												} },
-											_react2.default.createElement(
-												'div',
-												{ className: floatlabel },
-												_react2.default.createElement(
-													'label',
-													{ className: 'control-label' },
-													'Campus Name'
-												),
-												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'name', onChange: this.handleName, defaultValue: campusName })
-											),
-											_react2.default.createElement(
-												'div',
-												{ className: floatlabel },
-												_react2.default.createElement(
-													'label',
-													{ className: 'control-label' },
-													'Campus Image URL'
-												),
-												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'imageUrl', onChange: this.handleUrl, defaultValue: campusImage })
-											),
-											_react2.default.createElement(
-												'button',
-												{ type: 'submit', className: 'btn btn-primary pull-right' },
-												buttontitle
-											)
-										)
-									)
-								)
-							)
-						)
-					)
-				);
-			}
-		}]);
-
-		return _class;
-	}(_react.Component);
-
-	exports.default = _class;
-
-/***/ }),
-/* 307 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(185);
-	
-	var _reducers = __webpack_require__(258);
-	
-	var _CampusForm = __webpack_require__(306);
-	
-	var _CampusForm2 = _interopRequireDefault(_CampusForm);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    // studentsList: state.students.students,
-	    // backgroundImage: `url('${state.students.campus.imageUrl}')`,
-	    // pagetitle: ownProps.match.params.campusId
-	    campusName: state.students.campus.name,
-	    campusImage: state.students.campus.imageUrl,
-	    campusId: state.students.campus.id
-	  };
-	};
-	
-	var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
-	  return {
-	    // handleChange (evt) {
-	    //   dispatch(writeChannelName(evt.target.value));
-	    // },
-	    fetchCampusInfo: function fetchCampusInfo() {
-	      dispatch(fetchStudentsOfCampus(ownProps.match.params.campusId));
-	    },
-	    handleSubmit: function handleSubmit(evt, name, imageUrl, campusId) {
-	      evt.preventDefault();
-	      dispatch((0, _reducers.putCampus)({ name: name, imageUrl: imageUrl }, campusId, ownProps.history));
-	      // dispatch(writeChannelName(''));
-	    }
-	  };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_CampusForm2.default);
-
-/***/ }),
-/* 308 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var _class = function (_Component) {
-		_inherits(_class, _Component);
-	
-		function _class(props) {
-			_classCallCheck(this, _class);
-	
-			var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));
-	
-			_this.pagetitle = _this.props.selectedStudent ? 'Edit Student' : 'Add New Student';
-			_this.submitbuttonText = _this.props.selectedStudent ? 'Edit Student' : 'Add New Student';
-			var student = _this.props.selectedStudent || { name: '', bio: '' };
-			student.campusId = student.campusId || _this.props.campuses.length > 0 && _this.props.campuses[0].id || undefined;
-			_this.state = student;
-			_this.handleField = _this.handleField.bind(_this);
-			return _this;
-		}
-	
-		_createClass(_class, [{
-			key: 'handleField',
-			value: function handleField(e, field) {
-				var newstate = Object.assign({}, this.state);
-				newstate[field] = e.target.value;
-				this.setState(newstate);
-			}
-		}, {
-			key: 'componentDidMount',
-			value: function componentDidMount() {
-				this.props.fetchData();
-			}
-		}, {
-			key: 'componentWillReceiveProps',
-			value: function componentWillReceiveProps(_ref) {
-				var selectedStudent = _ref.selectedStudent;
-	
-				this.setState(selectedStudent);
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var _this2 = this;
-	
-				var bgstyle = {
-					backgroundImage: this.props.backgroundImage || "url('https://s-media-cache-ak0.pinimg.com/originals/90/f7/44/90f744e74143a15fa17cc2abbe1258e4.jpg')",
-					backgroundSize: "100%"
-				};
-				return _react2.default.createElement(
-					'div',
-					{ className: 'wrapper tutorial-page', style: bgstyle },
-					_react2.default.createElement(
-						'div',
-						{ className: 'header header-nofilter' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'container' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'row' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'col-md-12' },
-									_react2.default.createElement('br', null),
-									_react2.default.createElement('br', null),
-									_react2.default.createElement('br', null),
-									_react2.default.createElement('br', null),
-									_react2.default.createElement(
-										'h1',
-										{ className: 'title text-center', style: { color: "white" } },
-										this.pagetitle
-									)
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'main main-raised main-translucent' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'section' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'container' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'row tim-row' },
-									_react2.default.createElement(
-										'div',
-										{ className: 'col-md-8 col-md-offset-2' },
-										_react2.default.createElement(
-											'form',
-											{ onSubmit: function onSubmit(e) {
-													return _this2.props.handleSubmit(e, _this2.state);
-												} },
-											_react2.default.createElement(
-												'div',
-												{ className: 'form-group label-floating' },
-												_react2.default.createElement(
-													'label',
-													{ className: 'control-label' },
-													'Student Name'
-												),
-												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'name', onChange: function onChange(e) {
-														return _this2.handleField(e, 'name');
-													}, value: this.state.name })
-											),
-											_react2.default.createElement(
-												'div',
-												{ className: 'form-group label-floating' },
-												_react2.default.createElement(
-													'label',
-													{ className: 'control-label' },
-													'Student Bio'
-												),
-												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'bio', onChange: function onChange(e) {
-														return _this2.handleField(e, 'bio');
-													}, value: this.state.bio })
-											),
-											_react2.default.createElement(
-												'div',
-												{ className: 'form-group label-floating' },
-												_react2.default.createElement(
-													'label',
-													{ className: 'control-label' },
-													'Student Phone'
-												),
-												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'phone', onChange: function onChange(e) {
-														return _this2.handleField(e, 'phone');
-													}, value: this.state.phone })
-											),
-											_react2.default.createElement(
-												'div',
-												{ className: 'form-group label-floating' },
-												_react2.default.createElement(
-													'label',
-													{ className: 'control-label' },
-													'Student Photo'
-												),
-												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'photo', onChange: function onChange(e) {
-														return _this2.handleField(e, 'photo');
-													}, value: this.state.photo })
-											),
-											_react2.default.createElement(
-												'div',
-												{ className: 'form-group label-floating' },
-												_react2.default.createElement(
-													'label',
-													{ className: 'control-label' },
-													'Student Email'
-												),
-												_react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'email', onChange: function onChange(e) {
-														return _this2.handleField(e, 'email');
-													}, value: this.state.email })
-											),
-											_react2.default.createElement(
-												'div',
-												{ className: 'form-group' },
-												_react2.default.createElement(
-													'label',
-													{ htmlFor: 'sel1' },
-													'Assigned Campus:'
-												),
-												_react2.default.createElement(
-													'select',
-													{ className: 'form-control', id: 'sel1', onChange: function onChange(e) {
-															return _this2.handleField(e, 'campusId');
-														}, style: { color: 'white' }, value: this.state.campusId },
-													this.props.campuses.map(function (campus) {
-														return _react2.default.createElement(
-															'option',
-															{ key: campus.id, value: campus.id },
-															campus.name
-														);
-													})
-												)
-											),
-											_react2.default.createElement(
-												'button',
-												{ type: 'submit', className: 'btn btn-primary pull-right' },
-												this.submitbuttonText
-											)
-										)
-									)
-								)
-							)
-						)
-					)
-				);
-			}
-		}]);
-
-		return _class;
-	}(_react.Component);
-
-	exports.default = _class;
-
-/***/ }),
-/* 309 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(185);
-	
-	var _reducers = __webpack_require__(258);
-	
-	var _StudentForm = __webpack_require__(308);
-	
-	var _StudentForm2 = _interopRequireDefault(_StudentForm);
-	
-	var _reactRouterDom = __webpack_require__(218);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    campuses: state.campuses
-	  };
-	};
-	
-	var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
-	  return {
-	    // handleChange (evt) {
-	    //   dispatch(writeChannelName(evt.target.value));
-	    // },
-	    handleSubmit: function handleSubmit(evt, student) {
-	      evt.preventDefault();
-	      dispatch((0, _reducers.postNewStudent)(student, ownProps.history));
-	      // dispatch(writeChannelName(''));
-	    },
-	    fetchData: function fetchData() {
-	      dispatch((0, _reducers.fetchCampuses)());
-	    }
-	  };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_StudentForm2.default);
-
-/***/ }),
-/* 310 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(185);
-	
-	var _reducers = __webpack_require__(258);
-	
-	var _StudentForm = __webpack_require__(308);
-	
-	var _StudentForm2 = _interopRequireDefault(_StudentForm);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    selectedStudent: state.selectedStudent,
-	    campuses: state.campuses
-	  };
-	};
-	
-	var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
-	  return {
-	    fetchData: function fetchData() {
-	      dispatch((0, _reducers.fetchStudent)(ownProps.match.params.studentId));
-	      dispatch((0, _reducers.fetchCampuses)());
-	    },
-	    handleSubmit: function handleSubmit(evt, student) {
-	      evt.preventDefault();
-	      dispatch((0, _reducers.putStudent)(student, ownProps.history));
-	      // dispatch(writeChannelName(''));
-	    }
-	  };
-	};
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_StudentForm2.default);
 
 /***/ })
 /******/ ]);

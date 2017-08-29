@@ -73,7 +73,7 @@ const campuses = [
   { name: 'Krypton', imageUrl: 'https://3.bp.blogspot.com/-H6DAS9qtrMY/UJ7aPLVJFUI/AAAAAAAAV0U/MgZ5ulfkknc/w1200-h630-p-k-no-nu/Planet+Krypton.jpg' },
   { name: 'Pandora', imageUrl: 'https://www.christiedigital.com/img/Press%20Releases/Jake%20Peaceful.jpg' },
   { name: 'Lusitania', imageUrl: 'https://orig05.deviantart.net/793a/f/2008/253/2/c/lusitania_by_andreewallin.jpg' },
-  { name: 'Tatooine', imageUrl: 'http://www.nerdcoremovement.com/wp-content/uploads/2013/07/pd_starwars_tatoonie_planet_thg_110913_xwide.jpg' }
+  { name: 'Tatooine', imageUrl: 'https://www.nerdcoremovement.com/wp-content/uploads/2013/07/pd_starwars_tatoonie_planet_thg_110913_xwide.jpg' }
 ];
 
 // const seed = () =>
