@@ -5,8 +5,6 @@ import StudentForm from '../components/StudentForm';
 
 
 const mapStateToProps = function (state, ownProps) {
-  // console.log('mapStateToProps', state)
-  // console.log('mapStateToProps', ownProps)
   return {
     selectedStudent: ownProps.student,
     campuses: state.campuses,
@@ -20,7 +18,6 @@ const mapDispatchToProps = function (dispatch, ownProps) {
       dispatch(putStudent(student));
     },
     fetchData() {
-      // dispatch(fetchStudent(ownProps.student.id))
       dispatch(fetchCampuses())
     },
   };

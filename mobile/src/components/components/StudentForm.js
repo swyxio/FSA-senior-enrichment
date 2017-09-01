@@ -16,14 +16,13 @@ export default class extends Component {
 	handleField(value, field){
 		this.setState({[field]: value})
 	}
-	componentDidMount() {
-		this.props.fetchData()
-	}
+	// componentDidMount() {
+	// 	this.props.fetchData()
+	// }
 	componentWillReceiveProps ({selectedStudent}) {
     if (selectedStudent) this.setState(selectedStudent)
 	}
   render() {
-    console.log('this.props.campusId', this.props.campusId)
     return (
       <Card>
       <View>

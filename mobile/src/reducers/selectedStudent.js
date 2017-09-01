@@ -16,7 +16,6 @@ export function fetchStudent (studentId) {
     return axios.get('/api/students/' + studentId )
       .then(res => res.data)
       .then(student => {
-        console.log('student', student)
         dispatch(getStudent(student));
       });
   };

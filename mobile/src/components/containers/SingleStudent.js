@@ -5,7 +5,6 @@ import SingleStudent from '../components/SingleStudent';
 
 
 const mapStateToProps = function (state, ownProps) {
-  // console.log('ownProps.student', ownProps.student)
   return {
     selectedStudent: ownProps.student
   };

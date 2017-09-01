@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { postNewCampus } from '../../reducers';
+import { postNewCampus, fetchCampuses } from '../../reducers';
 import CampusForm from '../components/CampusForm';
 
 
@@ -13,6 +13,7 @@ const mapDispatchToProps = function (dispatch, ownProps) {
   return {
     handleSubmit (name, imageUrl) {
       dispatch(postNewCampus({ name, imageUrl }));
+      dispatch(fetchCampuses())
     }
   };
 };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { putCampus } from '../../reducers';
+import { putCampus, fetchCampuses } from '../../reducers';
 import CampusForm from '../components/CampusForm';
 
 
@@ -16,7 +16,8 @@ const mapStateToProps = function (state, ownProps) {
 const mapDispatchToProps = function (dispatch, ownProps) {
   return {
     fetchCampusInfo() {
-        dispatch(fetchStudentsOfCampus(ownProps.campus.id))
+      dispatch(fetchStudentsOfCampus(ownProps.campus.id))
+      dispatch(fetchCampuses())
     },
     handleSubmit (name, imageUrl, campusId) {
       dispatch(putCampus({ name, imageUrl }, campusId));

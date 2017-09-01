@@ -61,9 +61,6 @@ export default class extends Component {
     )
   }
 
-  componentDidMount() {
-    this.props.fetchCampuses()
-  }
   render() {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2

@@ -51,8 +51,6 @@ export function postNewStudent (student, history) {
     return axios.post('http://localhost:1337/api/students', student)
       .then(res => res.data)
       .then(newStudent => {
-        // dispatch(addStudent(newStudent));
-        // history.push(`/campuses/${newStudent.student.campusId}`);
         Actions.pop()
       });
   };
@@ -60,12 +58,9 @@ export function postNewStudent (student, history) {
 export function putStudent (student, history) {
 
   return function thunk (dispatch) {
-      // console.log('newStudent', student)
     return axios.put('http://localhost:1337/api/students/' + student.id, student)
       .then(res => res.data)
       .then(student => {
-        // dispatch(removeStudent(student.id));
-        // dispatch(addStudent(student));
         Actions.pop()
       });
   };

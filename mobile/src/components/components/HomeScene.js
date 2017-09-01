@@ -5,8 +5,13 @@ import { Button, CardSection } from '../common'
 // import ListItem from './ListItem';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 
+import { fetchCampuses, fetchStudents } from '../../reducers';
+
 class HomeScene extends Component {
 
+  componentDidMount() {
+    this.props.fetchData()
+  }
   render() {
     const topStyle = {
       fontSize: 20,
@@ -64,5 +69,14 @@ const mapStateToProps = state => {
   return {}
   // return { libraries: state.libraries };
 };
+const mapDispatchToProps = function (dispatch, ownProps) {
+  return {
+    fetchData() {
+      dispatch(fetchCampuses())
+      dispatch(fetchStudents())
+    }
+  };
+};
 
-export default connect(mapStateToProps)(HomeScene);
+
+export default connect(mapStateToProps,mapDispatchToProps)(HomeScene);

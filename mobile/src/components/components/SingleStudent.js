@@ -6,8 +6,6 @@ import { CardSection } from '../common';
 
 export default class extends Component {
   componentWillUpdate() {
-    // LayoutAnimation.spring();
-    console.log('this.props.selectedStudent', this.props.selectedStudent)
     Actions.refresh({title: this.props.selectedStudent.name})
   }
 
@@ -21,7 +19,6 @@ export default class extends Component {
       textStyle
     } = styles
     const student = this.props.selectedStudent
-    // console.log('student', student)
     return (
       <View>
           <CardSection>
