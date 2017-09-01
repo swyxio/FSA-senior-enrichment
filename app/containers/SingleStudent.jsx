@@ -13,7 +13,6 @@ const mapStateToProps = function (state, ownProps) {
 const mapDispatchToProps = function (dispatch, ownProps) {
   return {
     fetchStudent() {
-      // console.log('ownProps.match.params', ownProps.match.params)
       dispatch(fetchStudent(ownProps.match.params.studentId))
     }
   };

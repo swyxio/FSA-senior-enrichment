@@ -7,3 +7,7 @@ node_modules/*
 
 # NPM errors
 npm-debug.log
+
+mobile/node_modules/*
+mobile/android/*
+mobile/ios/*

@@ -159,7 +159,6 @@ describe('Campuses Route:', function () {
         if (typeof res.body === 'string') {
           res.body = JSON.parse(res.body);
         }
-        console.log('res.body', res.body)
         expect(res.body.students).to.have.length(3)
         expect(res.body.students[0].name).to.equal(coolStudents[0].name);
       });

@@ -1,7 +1,5 @@
 import React from 'react';
 
-		// <div class="main main-raised">
-		    	// <div class="section text-center section-landing">
 export default () => (
 	<div className="wrapper tutorial-page">
 		<div className="header header-filter" style={{backgroundImage: "url('https://images.unsplash.com/photo-1462536943532-57a629f6cc60?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450')"}}>

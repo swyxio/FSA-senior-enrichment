@@ -20,7 +20,6 @@ const mapDispatchToProps = function (dispatch, ownProps) {
     handleSubmit (evt, student) {
       evt.preventDefault();
       dispatch(putStudent(student, ownProps.history));
-      // dispatch(writeChannelName(''));
     }
   };
 };

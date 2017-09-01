@@ -13,13 +13,9 @@ const mapStateToProps = function (state) {
 
 const mapDispatchToProps = function (dispatch, ownProps) {
   return {
-    // handleChange (evt) {
-    //   dispatch(writeChannelName(evt.target.value));
-    // },
     handleSubmit (evt, student) {
       evt.preventDefault();
       dispatch(postNewStudent(student, ownProps.history));
-      // dispatch(writeChannelName(''));
     },
     fetchData() {
       dispatch(fetchCampuses())

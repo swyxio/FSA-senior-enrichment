@@ -41,6 +41,3 @@ render (
   </Provider>,
   document.getElementById('react-main')
 )
-
-
-            // <Route path="/channels/:channelId" component={MessagesList} />

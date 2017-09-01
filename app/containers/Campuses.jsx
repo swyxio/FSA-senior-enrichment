@@ -12,15 +12,6 @@ const mapStateToProps = function (state) {
 
 const mapDispatchToProps = function (dispatch, ownProps) {
   return {
-    // handleChange (evt) {
-    //   dispatch(writeChannelName(evt.target.value));
-    // },
-    // handleSubmit (evt) {
-    //   evt.preventDefault();
-    //   const name = evt.target.channelName.value;
-    //   dispatch(postChannel({ name }, ownProps.history));
-    //   dispatch(writeChannelName(''));
-    // }
     fetchCampuses() {
       dispatch(fetchCampuses())
     },

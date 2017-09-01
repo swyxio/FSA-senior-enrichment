@@ -66,11 +66,6 @@ describe('The `Admin` model', function () {
       .catch(err => {
           expect(err).to.be.an.instanceOf(Error);
       })
-    //   },
-    //   function(result) {
-    //       console.log('hello baby ')
-    //     expect(result).to.be.an.instanceOf(Error);
-    //   });
     });
 
     it('requires `name` (in a more strict way than for `content`)', function () {

@@ -7,16 +7,6 @@ export default class extends React.Component {
     }
     render() {
         const props = this.props.selectedStudent
-                    // <div className="container">
-                    //     <div className="section text-center section-landing">
-                    //         <div className="row">
-                    //             <div className="col-md-8 col-md-offset-2">
-                    //                 <h2 className="swyx-undo-title">Students</h2>
-                    //                 <h5 className="description">some text</h5>
-                    //             </div>
-                    //         </div>
-                    //     </div>
-                    // </div>
             return (
             <div className="wrapper profile-page" style={{backgroundImage: "url('/assets/img/examples/city.jpg')", backgroundSize: "100%"}}>
                 <div className="header header-filter">

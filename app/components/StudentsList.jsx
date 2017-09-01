@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 
 const makeRow = (student, deleteStudent) => {
-	// console.log('student', student)
 	return(
 		<tr key={student.id}>
 			<td className="text-center">{student.id}</td>
@@ -35,7 +34,6 @@ export default class extends React.Component {
 	render() {
 		// get varaibles from props
 		const bgstyle = {
-			// height: "100vh",
 			backgroundImage: (this.props.backgroundImage || "url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450')"),
 			backgroundSize: "100%"
 		}
@@ -74,11 +72,9 @@ export default class extends React.Component {
 						</NavLink>
 					</div>
 		)
-		// console.log('studentsList', studentsList)
 		const studentRows = studentsList.map(student => makeRow(student, this.props.deleteStudent))
 
 		// finally render the page
-		// <div className="section" style={{backgroundColor: "black"}}>
 		return (
 				<div className="wrapper tutorial-page" style={bgstyle}>
 					{pageHeader}

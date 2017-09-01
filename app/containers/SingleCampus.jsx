@@ -8,7 +8,6 @@ const mapStateToProps = function (state, ownProps) {
   return {
     studentsList: state.students.students,
     backgroundImage: `url('${state.students.campus.imageUrl}')`,
-    // pagetitle: ownProps.match.params.campusId
     pagetitle: state.students.campus.name,
     campusId: state.students.campus.id
   };
@@ -16,15 +15,6 @@ const mapStateToProps = function (state, ownProps) {
 
 const mapDispatchToProps = function (dispatch, ownProps) {
   return {
-    // handleChange (evt) {
-    //   dispatch(writeChannelName(evt.target.value));
-    // },
-    // handleSubmit (evt) {
-    //   evt.preventDefault();
-    //   const name = evt.target.channelName.value;
-    //   dispatch(postChannel({ name }, ownProps.history));
-    //   dispatch(writeChannelName(''));
-    // }
     fetchStudents() {
       dispatch(fetchStudentsOfCampus(ownProps.match.params.campusId))
     },

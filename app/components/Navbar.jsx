@@ -27,19 +27,3 @@ export default () => (
     	</div>
     </nav>
     )
-
-		            // <li>
-		            //     <a href="https://twitter.com/CreativeTim" target="_blank" className="btn btn-simple btn-white btn-just-icon">
-					// 		<i className="fa fa-twitter"></i>
-					// 	</a>
-		            // </li>
-		            // <li>
-		            //     <a href="https://www.facebook.com/CreativeTim" target="_blank" className="btn btn-simple btn-white btn-just-icon">
-					// 		<i className="fa fa-facebook-square"></i>
-					// 	</a>
-		            // </li>
-					// <li>
-		            //     <a href="https://www.instagram.com/CreativeTimOfficial" target="_blank" className="btn btn-simple btn-white btn-just-icon">
-					// 		<i className="fa fa-instagram"></i>
-					// 	</a>
-		            // </li>

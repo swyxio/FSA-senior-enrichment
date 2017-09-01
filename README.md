@@ -1,6 +1,10 @@
-# Senior Enrichment Project
+# Senior Enrichment Project: Comments from @swyx
 
 I made a thing! deployed at <https://swyx-seniorenrichment.herokuapp.com/>
+
+---
+
+# Instructions from FSA
 
 ## Getting started
 
