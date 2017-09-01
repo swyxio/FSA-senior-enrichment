@@ -16,9 +16,6 @@ export default class extends Component {
 	handleField(value, field){
 		this.setState({[field]: value})
 	}
-	// componentDidMount() {
-	// 	this.props.fetchData()
-	// }
 	componentWillReceiveProps ({selectedStudent}) {
     if (selectedStudent) this.setState(selectedStudent)
 	}

@@ -1,9 +1,5 @@
 import React from 'react';
 import { Scene, Router, Actions, Stack } from 'react-native-router-flux';
-// import LoginForm from './components/LoginForm';
-// import EmployeeList from './components/EmployeeList';
-// import EmployeeCreate from './components/EmployeeCreate';
-// import EmployeeEdit from './components/EmployeeEdit';
 import HomeScene from './components/HomeScene';
 import Campuses from './containers/Campuses';
 import Students from './containers/Students';

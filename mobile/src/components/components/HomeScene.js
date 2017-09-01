@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, ListView, TouchableWithoutFeedback } from 'react-native';
 import { connect } from 'react-redux';
 import { Button, CardSection } from '../common'
-// import ListItem from './ListItem';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 
 import { fetchCampuses, fetchStudents } from '../../reducers';
@@ -19,8 +18,6 @@ class HomeScene extends Component {
       paddingRight: 15
     }
     const botStyle = {
-      // paddingLeft: 15,
-      // paddingRight: 15
       padding: 15
     }
     return (

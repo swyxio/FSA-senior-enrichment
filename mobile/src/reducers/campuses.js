@@ -47,9 +47,6 @@ export function postNewCampus (campus) {
       .then(res => res.data)
       .then(newCampus => {
         dispatch(addCampus(newCampus));
-        // history.push(`/campuses/${newCampus.campus.id}`);
-        // history.push(`/campuses/`);
-        // Actions.campuses();
         Actions.pop();
       });
   };
@@ -61,7 +58,6 @@ export function putCampus (campus, campusId) {
       .then(res => res.data)
       .then(newCampus => {
         dispatch(editCampus(newCampus.campus));
-        // history.push(`/campuses/${newCampus.campus.id}`);
         Actions.pop();
       });
   };
@@ -75,8 +71,6 @@ export function deleteCampus (campusId) {
       .then(res => res.data)
       .then(() => {
         dispatch(removeCampus(campusId));
-        // history.push(`/campuses/${newCampus.campus.id}`);
-        // history.push(`/campuses/`);
       });
   };
 }
